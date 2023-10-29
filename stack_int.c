@@ -40,3 +40,13 @@ int stack_int_pop(stack_int *s) {
     s->size--;
     return s->data[s->size];
 }
+
+// Aula 14a ex1
+int stack_int_genpop(stack_int *s, int index) {
+    int value = s->data[index];
+    for (int i = index; i < s->size - 1; i++) {
+        s->data[i] = s->data[i + 1];
+    }
+    s->size--;
+    return value;
+}
