@@ -50,3 +50,13 @@ int stack_int_genpop(stack_int *s, int index) {
     s->size--;
     return value;
 }
+
+// Aula 14a ex3
+void stack_int_push_improv(stack_int *s, int value, int index) {
+    int i;
+    for (i = s->size; i > index; i--) {
+        s->data[i] = s->data[i - 1];
+    }
+    s->data[i] = value;
+    s->size++;
+}
