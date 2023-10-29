@@ -11,4 +11,7 @@ int stack_int_empty(stack_int *s);
 void stack_int_push(stack_int *s, int value);
 int stack_int_pop(stack_int *s);
 
+// Aula 14a ex2
+int stack_int_genpop(stack_int *s, int index);
+
 #endif
