@@ -78,3 +78,24 @@ int stack_int_genpop(stack_int *s, int index) {
 
     return value;
 }
+
+// Aula 14a ex4
+void stack_int_push_improv(stack_int *s, int value, int index) {
+    node *prev = NULL;
+    node *n = s->top;
+    for (int i = 0; i < index; i++) {
+        prev = n;
+        n = n->next;
+    }
+
+    node *new = malloc(sizeof(node));
+    new->value = value;
+
+    if (prev == NULL) {
+        new->next = s->top;
+        s->top = new;
+    } else {
+        new->next = n;
+        prev->next = new;
+    }
+}

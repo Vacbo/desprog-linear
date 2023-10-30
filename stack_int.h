@@ -14,4 +14,7 @@ int stack_int_pop(stack_int *s);
 // Aula 14a ex2
 int stack_int_genpop(stack_int *s, int index);
 
+// Aula 14a ex4
+void stack_int_push_improv(stack_int *s, int value, int index);
+
 #endif
