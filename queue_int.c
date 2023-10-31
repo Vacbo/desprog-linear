@@ -59,3 +59,33 @@ int queue_int_get(queue_int *q) {
     free(n);
     return value;
 }
+
+// Simulado Q4
+void queue_int_genput(queue_int *q, int value, int index) {
+    if (index == 0) {
+        queue_int_put(q, value);
+    } else {
+        int size = 0;
+        for (node *n = q->first; n != NULL; n = n->next) {
+            size++;
+        }
+
+        node *n = q->first;
+        node *prev = NULL;
+        for (int i = 0; i < size - index; i++) {
+            n = n->next;
+            prev = n;
+        }
+
+        node *n = malloc(sizeof(node));
+        n->value = value;
+
+        if (prev == NULL) {
+            q->first = n;
+            n->next = NULL;
+        } else {
+            n->next = prev->next;
+            prev->next = n;
+        }
+    } 
+}

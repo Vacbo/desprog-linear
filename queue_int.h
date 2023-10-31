@@ -11,4 +11,7 @@ int queue_int_empty(queue_int *q);
 void queue_int_put(queue_int *q, int value);
 int queue_int_get(queue_int *q);
 
+// Simulado Q4
+void queue_int_genput(queue_int *q, int value, int index);
+
 #endif
