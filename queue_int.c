@@ -46,3 +46,13 @@ int queue_int_get(queue_int *q) {
     q->begin = (q->begin + 1) % q->capacity;
     return q->data[q->begin];
 }
+
+// Simulado Q3
+void queue_int_genput(queue_int *q, int value, int index) {
+    for (int i = q->end; i != (q->end - index) % q->capacity; (i - 1) % q->capacity) {
+        q->data[i] = q->data[(i - 1) % q->capacity];
+    }
+    q->data[q->end - index] = value;
+    q->end = (q->end + 1) % q->capacity;
+    q->size++;
+}
